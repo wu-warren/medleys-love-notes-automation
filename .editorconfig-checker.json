@@ -1,0 +1,4 @@
+{
+  "IgnoreDefaults": false,
+  "Exclude": [".venv", ".ruff_cache", ".egg-info"]
+}
