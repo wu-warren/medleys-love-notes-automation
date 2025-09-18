@@ -3,14 +3,14 @@
  * @type {import("prettier").Config}
  */
 const config = {
-    overrides: [
-        {
-            files: "*.md",
-            options: {
-                proseWrap: "always",
-            },
-        },
-    ],
+  overrides: [
+    {
+      files: "*.md",
+      options: {
+        proseWrap: "always",
+      },
+    },
+  ],
 };
 
 module.exports = config;

@@ -1,24 +1,25 @@
 {
-    "name": "Dev Container",
-    "dockerFile": "Dockerfile",
-    "workspaceFolder": "/home/vscode/workspace",
-    "mounts": ["source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind"],
-    "postCreateCommand": ".devcontainer/post-create",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "charliermarsh.ruff",
-                "DavidAnson.vscode-markdownlint",
-                "esbenp.prettier-vscode",
-                "EditorConfig.EditorConfig",
-                "github.vscode-github-actions",
-                "mechatroner.rainbow-csv",
-                "ms-python.vscode-pylance",
-                "ms-python.debugpy",
-                "ms-python.python",
-                "streetsidesoftware.code-spell-checker",
-                "tamasfe.even-better-toml"
-            ]
-        }
+  "name": "Dev Container",
+  "dockerFile": "Dockerfile",
+  "workspaceFolder": "/home/vscode/workspace",
+  "mounts": ["source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind"],
+  "postCreateCommand": ".devcontainer/post-create",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "DavidAnson.vscode-markdownlint",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+        "github.vscode-github-actions",
+        "mechatroner.rainbow-csv",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "streetsidesoftware.code-spell-checker",
+        "tamasfe.even-better-toml"
+      ]
     }
+  }
 }
