@@ -22,5 +22,6 @@
   },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
-  }
+  },
+  "cSpell.words": ["mlna"]
 }
