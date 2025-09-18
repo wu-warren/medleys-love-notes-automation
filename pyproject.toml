@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlna"
+version = "0.1.0"
+description = "Services to automate Medleys A Cappella's Love Notes"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    { name = "Eric Wang", email = "ericwangyy@ucla.edu" },
+    { name = "Warren Wu", email = "wwuwarren@ucla.edu" },
+]
+license = { file = "LICENSE" }
+urls = { "Homepage" = "https://github.com/wu-warren/medleys-love-notes-automation" }
+dynamic = ["dependencies", "optional-dependencies"]
+
+[project.scripts]
+mlna-cli = "mlna.cli:main"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+optional-dependencies.dev = { file = ["requirements-dev.txt"] }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["src/mlna/mock/data/*"]
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py313"

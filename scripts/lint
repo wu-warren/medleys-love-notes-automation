@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -euo pipefail
+
+git ls-files | xargs detect-secrets scan --baseline .secrets.baseline --all-files
+ec
+ruff check
+
+echo -e "\e[32mSUCCESS\e[0m"

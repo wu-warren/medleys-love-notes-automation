@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# Clean
+./scripts/clean &>/dev/null
+
+# Setup dependencies
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e '.[dev]'
+
+# Setup hooks
+pre-commit install

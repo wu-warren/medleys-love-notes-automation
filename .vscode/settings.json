@@ -1,0 +1,26 @@
+{
+    "editor.formatOnSave": true,
+    "editor.rulers": [120],
+    "files.associations": {
+        ".secrets.baseline": "json",
+        "LICENSE": "plaintext"
+    },
+    "prettier.useEditorConfig": true,
+    "python.testing.pytestArgs": ["tests"],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.wordWrap": "off",
+        "editor.rulers": [80]
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.rulers": [80]
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    }
+}
