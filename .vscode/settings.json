@@ -6,10 +6,10 @@
     "LICENSE": "plaintext"
   },
   "prettier.useEditorConfig": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.testing.pytestArgs": ["tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.terminal.activateEnvironment": true,
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",

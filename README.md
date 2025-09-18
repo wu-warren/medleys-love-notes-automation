@@ -42,13 +42,34 @@ Finally, open an integrated terminal in VS Code. When you run `which pip`, it
 should end with something like `.venv/bin/pip`. If not, close and reopen the
 integrated terminal.
 
-## How to Update the Development Environment
+### How to Update the Development Environment
 
 <!-- prettier-ignore-start -->
 
 - Runtime dependency: update `requirements.txt`
 - Development tool dependency: if it is a Python package, update
   `requirements-dev.txt`; otherwise, update `.devcontainer/Dockerfile`
-- Add new secret: `detect-secrets scan > .secrets.baseline` <!-- pragma: allowlist secret -->
+- Add new secret:
+  `detect-secrets scan > .secrets.baseline` <!-- pragma: allowlist secret -->
 
 <!-- prettier-ignore-end -->
+
+## Runtime Image
+
+A runtime image can be built using the `Dockerfile`.
+
+<!-- prettier-ignore-start -->
+
+> [!IMPORTANT]
+> Make sure that you are not inside the dev container.
+
+<!-- prettier-ignore-end -->
+
+The following can be used to build and run the application:
+
+```sh
+docker build -t mlna .
+docker run -it --rm -p 8080:8080 mlna
+```
+
+A dashboard can be found at `http://localhost:8080`.
