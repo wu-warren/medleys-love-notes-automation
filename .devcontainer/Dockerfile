@@ -14,3 +14,4 @@ RUN if [ -f /home/vscode/.bashrc ]; then \
 # Switch to vscode user
 USER vscode
 WORKDIR /home/vscode/workspace
+EXPOSE 8080

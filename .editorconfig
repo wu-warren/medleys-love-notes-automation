@@ -28,5 +28,5 @@ indent_size = 2
 insert_final_newline = true
 max_line_length = 120
 
-[.gitignore]
+[.{dockerignore,gitignore}]
 end_of_line = unset

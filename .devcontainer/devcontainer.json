@@ -3,6 +3,7 @@
   "dockerFile": "Dockerfile",
   "workspaceFolder": "/home/vscode/workspace",
   "mounts": ["source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind"],
+  "forwardPorts": [8080],
   "postCreateCommand": ".devcontainer/post-create",
   "customizations": {
     "vscode": {

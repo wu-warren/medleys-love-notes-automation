@@ -19,13 +19,18 @@ dynamic = ["dependencies", "optional-dependencies"]
 [project.scripts]
 mlna-cli = "mlna.cli:main"
 
+[tool.setuptools]
+package-dir = { "" = "src" }
+
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
 optional-dependencies.dev = { file = ["requirements-dev.txt"] }
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["src/mlna/mock/data/*"]
+
+[tool.setuptools.package-data]
+mlna = ["mock/data/*"]
 
 [tool.ruff]
 line-length = 120
