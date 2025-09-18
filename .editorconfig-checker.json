@@ -1,4 +1,4 @@
 {
   "IgnoreDefaults": false,
-  "Exclude": [".venv", ".ruff_cache", ".egg-info"]
+  "Exclude": [".venv", ".ruff_cache", ".egg-info", "__pycache__"]
 }
