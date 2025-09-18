@@ -9,8 +9,13 @@ This assumes you have [Git](https://git-scm.com/downloads),
 [Docker](https://docs.docker.com/desktop/) installed.
 
 <!-- prettier-ignore-start -->
+
 > [!NOTE]
-> The hyperlinked URLs are not necessarily what should be used.
+> Feel free to install the above software however you'd like (not necessarily
+> following the instructions in the hyperlinked URLs). For example, on Mac, it
+> is sufficient to use `xcode-select --install`. You may need to do your own
+> research.
+
 <!-- prettier-ignore-end -->
 
 First, clone the repository. Either run the following as a script and open in VS
