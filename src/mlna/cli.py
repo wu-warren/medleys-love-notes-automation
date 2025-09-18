@@ -5,7 +5,7 @@ import importlib.metadata
 
 import uvicorn
 
-from mlna.api import rest_api_v1
+from mlna.api import rest_api
 
 __all__ = ("main",)
 
@@ -14,10 +14,8 @@ def main():
     """The main entrypoint."""
 
     PROJECT_NAME = "mlna"
-    PROJECT_SCRIPT = "mlna-cli"
-
     meta = importlib.metadata.metadata(PROJECT_NAME)
-    parser = argparse.ArgumentParser(prog=PROJECT_SCRIPT, description=meta.get("Summary"))
+    parser = argparse.ArgumentParser(description=meta.get("Summary"))
     parser.add_argument("-v", "--version", action="version", version=importlib.metadata.version(PROJECT_NAME))
     parser.add_argument(
         "--host",
@@ -38,7 +36,7 @@ def main():
     args = parser.parse_args()
 
     uvicorn.run(
-        rest_api_v1,
+        rest_api,
         host=args.host,
         port=args.port,
         reload=args.reload,

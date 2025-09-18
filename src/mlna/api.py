@@ -1,10 +1,26 @@
 """Defines the APIs for interacting with medleys-love-notes-automation."""
 
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
-rest_api_v1 = FastAPI(root_path="/api/v1")
+__all__ = ("rest_api",)
+
+rest_api = FastAPI()
+templates = Jinja2Templates(directory="src/mlna/data/templates")
 
 
-@rest_api_v1.get("/")
-def root():
-    return {"status": "All systems operational"}
+@rest_api.get("/", response_class=HTMLResponse)
+def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+
+api_v1_router = APIRouter(prefix="/api/v1")
+
+
+@api_v1_router.get("/status")
+def status():
+    return {"ok": True, "message": "API is healthy"}
+
+
+rest_api.include_router(api_v1_router)

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>mlna Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+      }
+      #status {
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>medleys-love-notes-automation API Status</h1>
+    <div id="status">Loading...</div>
+
+    <script>
+      async function fetchStatus() {
+        try {
+          const res = await fetch("/api/v1/status");
+          if (!res.ok) throw new Error("Failed to fetch status");
+          const data = await res.json();
+          document.getElementById("status").textContent = data.ok
+            ? `✅ ${data.message}`
+            : "❌ API unavailable";
+        } catch (err) {
+          document.getElementById("status").textContent =
+            "❌ Error loading status";
+          console.error(err);
+        }
+      }
+
+      fetchStatus();
+    </script>
+  </body>
+</html>
