@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-git ls-files | xargs detect-secrets scan --baseline .secrets.baseline --all-files
+git ls-files | xargs -0 detect-secrets-hook --baseline .secrets.baseline
 ec
 ruff check
 

@@ -29,5 +29,7 @@ include = ["src/mlna/mock/data/*"]
 
 [tool.ruff]
 line-length = 120
-indent-width = 4
 target-version = "py313"
+
+[tool.ruff.format]
+docstring-code-format = true
