@@ -11,6 +11,10 @@ repos:
     hooks:
       - id: editorconfig-checker
         alias: ec
+  - repo: https://github.com/pycqa/flake8
+    rev: "7.3.0"
+    hooks:
+      - id: flake8
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.13.0
     hooks:

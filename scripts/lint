@@ -4,6 +4,7 @@ set -euo pipefail
 
 git ls-files | xargs -0 detect-secrets-hook --baseline .secrets.baseline
 ec .
+flake8
 ruff check
 
 echo -e "\e[32mSUCCESS\e[0m"
