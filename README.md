@@ -8,7 +8,10 @@ This assumes you have [Git](https://git-scm.com/downloads),
 [Visual Studio Code](https://code.visualstudio.com/Download) and
 [Docker](https://docs.docker.com/desktop/) installed.
 
-> [!NOTE] The hyperlinked URLs are not necessarily what should be used.
+<!-- prettier-ignore-start -->
+> [!NOTE]
+> The hyperlinked URLs are not necessarily what should be used.
+<!-- prettier-ignore-end -->
 
 First, clone the repository. Either run the following as a script and open in VS
 Code, or open directly in VS Code with `Git: Clone`.
