@@ -11,5 +11,6 @@ find . -type d -name "*.egg-info" -exec rm -rf {} +
 find . -maxdepth 1 -type d -name ".venv" -exec rm -rf {} +
 find . -type f -name "*.pyc" -delete
 find . -type f -name "*.pyo" -delete
+find . -type f -name ".coverage" -delete
 
 echo -e "\e[32mSUCCESS\e[0m"
