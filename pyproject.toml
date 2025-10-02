@@ -30,7 +30,7 @@ optional-dependencies.dev = { file = ["requirements-dev.txt"] }
 where = ["src"]
 
 [tool.setuptools.package-data]
-mlna = ["data/*", "mock/data/*"]
+mlna = ["data/*"]
 
 [tool.ruff]
 line-length = 120
