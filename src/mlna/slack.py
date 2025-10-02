@@ -4,7 +4,7 @@ import os
 
 from dotenv import load_dotenv
 
-from slack_bolt.adapter.fastapi import SlackRequestHandler
+from slack_bolt.adapter.fastapi.async_handler import AsyncSlackRequestHandler
 from slack_bolt.async_app import AsyncApp
 
 __all__ = ("app", "handler")
@@ -12,7 +12,7 @@ __all__ = ("app", "handler")
 load_dotenv()
 
 app = AsyncApp(token=os.environ["SLACK_BOT_TOKEN"], signing_secret=os.environ["SLACK_SIGNING_SECRET"])
-handler = SlackRequestHandler(app)
+handler = AsyncSlackRequestHandler(app)
 
 
 @app.command("/hello")
