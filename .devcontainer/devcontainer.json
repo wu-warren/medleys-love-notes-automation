@@ -1,6 +1,7 @@
 {
   "name": "Dev Container",
   "dockerFile": "Dockerfile",
+  "context": "..",
   "workspaceFolder": "/home/vscode/workspace",
   "mounts": ["source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind"],
   "forwardPorts": [8080],
