@@ -7,7 +7,7 @@ name = "mlna"
 version = "0.1.0"
 description = "Services to automate Medleys A Cappella's Love Notes"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 authors = [
     { name = "Eric Wang", email = "ericwangyy@ucla.edu" },
     { name = "Warren Wu", email = "wwuwarren@ucla.edu" },
@@ -34,7 +34,10 @@ mlna = ["data/*"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py313"
+target-version = "py310"
 
 [tool.ruff.format]
 docstring-code-format = true
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

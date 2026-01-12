@@ -14,4 +14,12 @@ RUN if [ -f /home/vscode/.bashrc ]; then \
 # Switch to vscode user
 USER vscode
 WORKDIR /home/vscode/workspace
+
+# Copy project files (for installation)
+COPY pyproject.toml requirements.txt requirements-dev.txt ./
+COPY src ./src
+
+# Install dependencies (main and dev)
+RUN pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
+
 EXPOSE 8080
