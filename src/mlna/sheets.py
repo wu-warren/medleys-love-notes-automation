@@ -126,34 +126,6 @@ def get_in_person(booking_id: str, booking_range: str):
     return bookings_in_person_df
 
 
-def get_roster(spreadsheet_id: str, range_name: str) -> pd.DataFrame:
-    """Fetch and process roster data from Google Sheets."""
-    # creds = None
-    # if os.path.exists("token.json"):
-    #     creds = Credentials.from_authorized_user_file("token.json", SCOPES)
-    # if not creds or not creds.valid:
-    #     if creds and creds.expired and creds.refresh_token:
-    #         creds.refresh(Request())
-    #     else:
-    #         creds_path = os.path.join(os.path.dirname(__file__), "credentials.json")
-    #         flow = InstalledAppFlow.from_client_secrets_file(creds_path, SCOPES)
-    #         creds = flow.run_local_server(port=57331)
-    #     with open("token.json", "w") as token:
-    #         token.write(creds.to_json())
-    creds_path = os.path.join(os.path.dirname(__file__), "credentials.json")
-    flow = InstalledAppFlow.from_client_secrets_file(creds_path, SCOPES)
-    creds = flow.run_local_server(port=57331)
-    try:
-        service = build("sheets", "v4", credentials=creds)
-        sheet = service.spreadsheets()
-        result = sheet.values().get(spreadsheetId=spreadsheet_id, range=range_name).execute()
-        values = result.get("values", [])
-        return pd.DataFrame(values)
-    except HttpError as err:
-        print(err)
-        return pd.DataFrame()
-
-
 # def main():
 #     """Shows basic usage of the Sheets API.
 #     Prints values from a sample spreadsheet.

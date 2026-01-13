@@ -9,7 +9,6 @@ on:
     branches:
       - main
 
-
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -26,13 +25,12 @@ jobs:
       - name: Write credentials.json
         shell: bash
         env:
-          CREDENTIALS_JSON: ${{ secrets.CREDENTIALS_JSON}}
+          TOKEN_JSON: ${{ secrets.TOKEN_JSON}}
         run: |
-          set -euo pipefail
-          if [ -z "${CREDENTIALS_JSON:-}" ]; then
-            echo "CREDENTIALS_JSON secret is not set."
+          if [ -z "${TOKEN_JSON:-}" ]; then
+            echo "TOKEN_JSON secret is not set."
             exit 1
           fi
-          printf '%s' "$CREDENTIALS_JSON" > src/mlna/credentials.json
+          printf '%s' "$TOKEN_JSON" > src/mlna/token.json
 
       - run: ./scripts/test
