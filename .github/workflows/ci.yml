@@ -21,4 +21,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e '.[dev]'
       - run: ./scripts/lint
+      - name: Write credentials.json
+        shell: bash
+        env:
+          CREDENTIALS_JSON: ${{ secrets.CREDENTIALS_JSON}}
+        run: |
+          set -euo pipefail
+          if [ -z "${CREDENTIALS_JSON:-}" ]; then
+            echo "CREDENTIALS_JSON secret is not set."
+            exit 1
+          fi
+          printf '%s' "$CREDENTIALS_JSON" > src/mlna/credentials.json
+
       - run: ./scripts/test

@@ -20,6 +20,6 @@ COPY pyproject.toml requirements.txt requirements-dev.txt ./
 COPY src ./src
 
 # Install dependencies (main and dev)
-RUN pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
+RUN python -m pip install --no-cache-dir -r requirements.txt -r requirements-dev.txt
 
 EXPOSE 8080
