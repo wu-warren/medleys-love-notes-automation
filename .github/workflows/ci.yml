@@ -27,14 +27,14 @@ jobs:
           echo "PWD=$(pwd)"
           echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
           ls -la
-      - name: Write token.json
+      - name: Write service_credentials.json
         shell: bash
         env:
-          TOKEN_JSON: ${{ secrets.TOKEN_JSON}}
+          CREDENTIALS_JSON: ${{ secrets.CREDENTIALS_JSON}}
         run: |
-          if [ -z "${TOKEN_JSON:-}" ]; then
-            echo "TOKEN_JSON secret is not set."
+          if [ -z "${CREDENTIALS_JSON:-}" ]; then
+            echo "CREDENTIALS secret is not set."
             exit 1
           fi
-          printf '%s' "$TOKEN_JSON" > token.json
+          printf '%s' "$CREDENTIALS_JSON" > service_credentials.json
       - run: ./scripts/test
