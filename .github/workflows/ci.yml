@@ -22,20 +22,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e '.[dev]'
       - run: ./scripts/lint
-      - name: Write credentials.json
+      - name: Debug working dir
+        run: |
+          echo "PWD=$(pwd)"
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          ls -la
+      - name: Write token.json
         shell: bash
         env:
           TOKEN_JSON: ${{ secrets.TOKEN_JSON}}
-          CREDENTIALS_JSON: ${{ secrets.CREDENTIALS_JSON}}
         run: |
           if [ -z "${TOKEN_JSON:-}" ]; then
             echo "TOKEN_JSON secret is not set."
             exit 1
           fi
-          printf '%s' "$TOKEN_JSON" > src/mlna/token.json
-          if [ -z "${CREDENTIALS_JSON:-}" ]; then
-            echo "CREDENTIALS_JSON secret is not set."
-            exit 1
-          fi
-          printf '%s' "$CREDENTIALS_JSON" > src/mlna/credentials.json
+          printf '%s' "$TOKEN_JSON" > token.json
       - run: ./scripts/test
