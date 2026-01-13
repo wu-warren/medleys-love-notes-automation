@@ -37,8 +37,8 @@ jobs:
             exit 1
           fi
 
-          CREDS_PATH = "$RUNNER_TEMP/service_credentials.json"
+          CREDS_PATH="$RUNNER_TEMP/service_credentials.json"
           printf '%s' "$CREDENTIALS_JSON" > "$CREDS_PATH"
 
-          echo "GOOGLE_APPLICATION_CREDENTIALS=$CREDS_PATH" >> $GITHUB_ENV
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$CREDS_PATH" >> "$GITHUB_ENV"
       - run: ./scripts/test
