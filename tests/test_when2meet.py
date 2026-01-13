@@ -1,6 +1,7 @@
 # import pytest
 
 import mlna.sheets as sheets
+import mlna.parts as parts
 import pandas as pd
 import pytest
 
@@ -53,8 +54,6 @@ def test_get_in_person(monkeypatch):
 
 def test_get_parts(monkeypatch):
     """Test the get_voice_parts function."""
-    from mlna.parts import get_voice_parts
-
     fake_df_booking = pd.DataFrame(
         [
             [
@@ -192,5 +191,8 @@ def test_get_parts(monkeypatch):
 
     monkeypatch.setattr(sheets, "call_sheets_api", fake_call_sheets_api)
     monkeypatch.setattr(sheets, "get_when2meet", fake_get_when2meet)
+
+    monkeypatch.setattr(parts, "call_sheets_api", fake_call_sheets_api)
+    monkeypatch.setattr(parts, "get_when2meet", fake_get_when2meet)
     # Call the function
-    get_voice_parts(booking_id, booking_range, roster_id, roster_range, when2meet_url)
+    parts.get_voice_parts(booking_id, booking_range, roster_id, roster_range, when2meet_url)
