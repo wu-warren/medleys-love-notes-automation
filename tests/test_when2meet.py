@@ -12,7 +12,7 @@ SAMPLE_ROSTER_ID = "1ajRbwIkCLR6Inw_X3TA-iXmoown2KyFJIbuicKM-vLk"
 SAMPLE_ROSTER_RANGE_NAME = "Sheet1!A2:C"
 
 
-@pytest.mark.skip(reason="Skipping API call test to avoid dependency on external service.")
+@pytest.mark.integration
 def test_call_sheets_api():
     """Test the Google Sheets API call."""
     spreadsheet_id = SAMPLE_BOOKING_ID
@@ -21,7 +21,7 @@ def test_call_sheets_api():
     assert not df.empty
 
 
-@pytest.mark.skip(reason="Skipping When2Meet API call test to avoid dependency on external service.")
+@pytest.mark.integration
 def test_get_when2meet():
     """Test fetching When2Meet data."""
     when2meet_url = SAMPLE_WHEN2MEET_URL

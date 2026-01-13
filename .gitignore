@@ -230,3 +230,4 @@ pyrightconfig.json
 # Google Sheets API Credentials
 credentials.json
 token.json
+service_credentials.json
