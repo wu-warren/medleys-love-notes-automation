@@ -17,9 +17,11 @@ import re
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
-creds = service_account.Credentials.from_service_account_file(
-    os.path.join(os.path.dirname(__file__), "service_credentials.json"), scopes=SCOPES
+path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS") or os.path.join(
+    os.path.dirname(__file__), "service_credentials.json"
 )
+
+creds = service_account.Credentials.from_service_account_file(path, scopes=SCOPES)
 
 
 def call_sheets_api(spreadsheet_id: str, range_name: str) -> pd.DataFrame:

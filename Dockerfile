@@ -11,5 +11,5 @@ RUN pip install --no-cache-dir -e .
 ENV PORT=8080
 EXPOSE 8080
 
-# Run your CLI module (adjust if your package entrypoint differs)
+# Run your CLI module
 CMD ["python", "-m", "mlna.cli", "--host", "0.0.0.0", "--port", "8080"]
